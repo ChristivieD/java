@@ -1,4 +1,4 @@
-package day8;
+package com.christivie.demo.day8;
 
 import java.util.HashMap;
 import java.util.Map;

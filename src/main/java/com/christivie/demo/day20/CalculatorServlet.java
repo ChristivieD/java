@@ -1,4 +1,4 @@
-package com.christivie.demo;
+package com.christivie.demo.day20;
 
 import com.christivie.project.utility.Helpers;
 import jakarta.servlet.ServletException;
@@ -16,7 +16,7 @@ public class CalculatorServlet extends HttpServlet {
     private static Map<String, String> results = new HashMap<>();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/day20/calculator.jsp").forward(request, response);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CalculatorServlet extends HttpServlet {
         results.put("num1", num1);
         results.put("num2", num2);
         request.setAttribute("results", results);
-        request.getRequestDispatcher("calculator.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/day20/calculator.jsp").forward(request, response);
 
     }
     public void add(String num1, String num2) {

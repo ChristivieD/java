@@ -1,5 +1,5 @@
 <%@ page import="java.util.Map" %>
-<%@ page import="java.util.HashMap" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%-- JSP Comments will not appear the browser--%>
 <!-- HTML Comments will appear in the browser-->
 
@@ -32,14 +32,14 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <%-- Java Expressions are single line statements of Java embedded within HTML --%>
-<%--            <c:if test ="${results.containsKey('sum')}">--%>
-<%--                <p><c: out value="${results.sum}" /></p>--%>
-<%--            </c:if>--%>
-<%--            <c:if test ="${results.containsKey('invalidNumber')}">--%>
-<%--                <p><c: out value="${results.invalidNumber}" /></p>--%>
-<%--            </c:if>--%>
-            <p>${results.get("sum")}</p>
-            <p>${results.get("invalidNumber")}</p>
+            <c:if test ="${results.sum != ''}">
+                <p><c:out value="${results.sum}" /></p>
+            </c:if>
+            <c:if test ="${results.invalidNumber != ''}">
+                <p><c:out value="${results.invalidNumber}" /></p>
+            </c:if>
+<%--            <p>${results.get("sum")}</p>--%>
+<%--            <p>${results.get("invalidNumber")}</p>--%>
         </div>
     </div>
 </div>
