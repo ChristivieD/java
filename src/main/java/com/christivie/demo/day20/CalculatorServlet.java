@@ -38,7 +38,7 @@ public class CalculatorServlet extends HttpServlet {
             double n2 = Double.parseDouble(num2);
             results.put("sum", n1+ " +" + num2+ "=" + Helpers.round(n1 + n2));
         } else{
-            results.put("inavalidNumber", "Please input a valid number");
+            results.put("invalidNumber", "Please input a valid number");
         }
     }
 

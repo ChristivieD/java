@@ -1,5 +1,6 @@
 package com.christivie.demo.day21;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,11 +32,12 @@ public class JsonReader {
     }
 
     public static void main(String[] args) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://randomuser.me/api/?format=json&seed=abc&results=5&nat=us&inc=name,location,email,phone,cell,gender,nat,login&noinfo");
+        JSONObject json = readJsonFromUrl("https://randomuser.me/api/?format=json&seed=abc&results=5&nat=us&inc=name,picture,location,email,phone,nat&noinfo");
 //        System.out.println(json.toString());
 //        System.out.println(json.get("results"));
         ObjectMapper mapper = new ObjectMapper();
-        UserFromJson userFromJson = mapper.readValue(json.toString(), UserFromJson.class);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
+        UserFromJson userFromJson = mapper.readValue(json.toString(),UserFromJson.class);
         userFromJson.getUsers().forEach(System.out::println);
 
     }

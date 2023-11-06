@@ -1,11 +1,10 @@
 <%@ page import="java.util.Map" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%-- JSP Comments will not appear the browser--%>
 <!-- HTML Comments will appear in the browser-->
 
 <%-- This is called a page directive. Use to import java files--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- Scriplets contain Java code embedded within HTML --%>
 
