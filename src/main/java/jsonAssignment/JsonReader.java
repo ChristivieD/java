@@ -32,14 +32,37 @@ public class JsonReader {
         }
     }
 
-    public static void main(String[] args) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://www.thecocktaildb.com/api/json/v1/1/random.php/format=json&seed=abc&drinks=5&nat=us&inc=id,drink,category,alcoholic,glass");
-        System.out.println(json.toString());
-        System.out.println(json.get("drinks"));
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
-//        CocktailsFromJson cocktailsFromJson = mapper.readValue(json.toString(),CocktailsFromJson.class);
-//        cocktailsFromJson.getCocktailList().forEach(System.out::println);
+    public static Picture pictureFromJsonString(String jsonString) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            return mapper.readValue(jsonString, Picture.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
+
+    public static void main(String[] args) throws IOException, JSONException {
+        JSONObject json = readJsonFromUrl("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
+
+        String imageUrl = json.getJSONArray("drinks").getJSONObject(0).optString("strDrinkThumb");
+        Picture picture = Picture.fromJsonString("{\"strDrinkThumb\": \"" + imageUrl + "\"}");
+
+        if (picture != null) {
+            System.out.println(picture);
+        } else {
+            System.out.println("Failed to deserialize JSON into Picture object.");
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+        PictureFromJson pictureFromJson = mapper.readValue(json.toString(), PictureFromJson.class);
+        CocktailsFromJson cocktailsFromJson = mapper.readValue(json.toString(), CocktailsFromJson.class);
+
+//        pictureFromJson.getPictureList().forEach(System.out::println);
+        cocktailsFromJson.getCocktailList().forEach(System.out::println);
     }
 }
