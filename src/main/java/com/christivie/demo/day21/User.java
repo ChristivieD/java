@@ -17,6 +17,10 @@ public class User implements Comparable<User> {
     private String cell;
     @JsonProperty("nat")
     private String nat;
+    @JsonProperty("registered")
+    private String registered;
+    @JsonProperty("id")
+    private String id;
     @JsonProperty("picture")
     private Picture picture;
 
@@ -51,18 +55,29 @@ public class User implements Comparable<User> {
     public Picture getPicture() {
         return picture;
     }
+
+    public String getRegistered() {
+        return registered;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "name=" + name +
-                "\n\tgender='" + gender + '\'' +
-                "\n\tlocation=" + location +
-                "\n\temail='" + email + '\'' +
-                "\n\tphone='" + phone + '\'' +
-                "\n\tcell='" + cell + '\'' +
-                "\n\tnat='" + nat + '\'' +
-                "\n\tpicture='" + picture + '\'' +
-                "}\n";
+                ", location=" + location +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", gender='" + gender + '\'' +
+                ", cell='" + cell + '\'' +
+                ", nat='" + nat + '\'' +
+                ", registered='" + registered + '\'' +
+                ", id='" + id + '\'' +
+                ", picture=" + picture +
+                '}';
     }
 
     @Override
