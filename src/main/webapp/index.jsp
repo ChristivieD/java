@@ -11,5 +11,9 @@
 <a href="convert-temp">Temperature Converter</a><br>
 <a href="user-json">Json User Directory</a><br>
 <a href="CocktailsServlet">Json Personal Project</a><br/>
+<a href="users-db">database user directory</a><br/>
+<a href="signup">sign up</a><br/>
+<a href="login">log in</a><br/>
+<a href="logout">log out</a><br/>
 </body>
 </html>
