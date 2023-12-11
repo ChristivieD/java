@@ -100,7 +100,7 @@ public class User {
                 "$");
         Matcher m = p.matcher(passwordStr);
         if (!m.matches()) {
-            throw new IllegalArgumentException("Password must contain at least 8 characters, with 1 digit, 1 lowercase,and 1 uppercase letter");
+            throw new IllegalArgumentException("Password must contain at least 8 characters,with 1 specific character, with 1 digit, 1 lowercase,and 1 uppercase letter");
         }
         this.password = passwordStr.toCharArray();
     }
@@ -112,6 +112,16 @@ public class User {
     public String getStatus() {
         return status;
     }
+
+    public void setStatus(String newStatus) {
+        if ("inactive".equals(newStatus) || "active".equals(newStatus) || "locked".equals(newStatus)) {
+            this.status = newStatus;
+        } else {
+            throw new IllegalArgumentException("Invalid status. Allowed values are 'inactive', 'active', and 'locked'.");
+        }
+
+    }
+
     public String getPrivileges() {
         return privileges;
     }

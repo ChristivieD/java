@@ -1,0 +1,504 @@
+JAVA_HOME, MAVEN_HOME, and CATALINA_HOME are called environment variables,
+What keyword is used to call a constructor to instantiate an object from a class?
+Answer:	new
+method: A behavior of a class, such as getting and setting values.
+Class :The blueprint for an object.Instance Variable: A private attribute of a class (also known as a field).
+Object : An instance of a class.
+Parameter: A variable input requirement of a method.
+Argument : An actual value passed a
+Git  is the version control system we use to commit file changes and push source code to a remote repository.
+gitHub  is a web-based repository hosting service that allows us to share our project code publicly or privately.
+a .gitignore file is a text file placed in your project folder that tells git not to track certain files and folders that you don't want being uploaded to your master repository.
+code
+Mystery mystery1 = new Mystery(5);
+Mystery mystery2 = mystery1;
+mystery2.setNum(3);
+System.out.println(mystery1.getNum());
+Are the getNum and setNum methods static or not static? not static
+String num1 = "1";
+int num2 = 0;
+try {
+    num2 = Integer.parseInt(num1);
+} catch(NumberFormatException e) {
+    System.out.printf("'%s' is not a valid integer\n", num1);
+}
+double num3 = (double)num2;
+System.out.println(num3);
+
+Is the parseInt method static or not static? static
+Replace YOUR_CODE_HERE with code that will get the Mystery object count.
+
+class Mystery {
+    private static int count = 0;
+    public Mystery() {
+        count++;
+    }
+    public static int getCount() {
+        return count;
+    }
+}
+
+public class MyClass {
+    public static void main(String args[]) {
+        Mystery m1 = new Mystery();
+        Mystery m2 = new Mystery();
+        Mystery m3 = new Mystery();
+        System.out.println(YOUR_CODE_HERE);
+    }
+} (Mystery.getCount())
+In a class diagram, the middle box of a class rectangle contains : the attributes
+In a class diagram, the symbol - represents: The private access modifier
+Which of the following is an example of an aggregation relationship? : Order consists of OrderItems
+Stack is not an interface
+Map does not inherit from the collection interface
+What is a correct way to create an instance of an ArrayList? : List<String> list = new ArrayList<>();
+Given this code:
+private static List<Integer> testScores;
+public static void main(String[] args) {
+    testScores = new ArrayList<>(Arrays.asList(85, 98));
+    // your code here
+}
+
+Write code that will add the number 77 to the beginning of the ArrayList.
+
+Answer:	testScores.add(0,77);
+Given this code:
+
+private static List<Integer> testScores;
+
+public static void main(String[] args) {
+    testScores = new ArrayList<>(Arrays.asList(85, 98));
+    // your code here
+}
+
+Call the ArrayList's forEach method and print 85 and 98 on separate lines using a method reference. (Do not call the printCollection method)
+(testScores.forEach(System.out::println);)
+The required parameter of the forEach method is a(n) consumer object.
+Select the THREE code samples that WILL remove all instances of "bread" from the groceryList.
+
+ArrayList<String> groceryList = new ArrayList<String>();
+groceryList.add("milk");
+groceryList.add("bread");
+groceryList.add("bread");
+groceryList.add("eggs");
+groceryList.add("bread");
+Iterator<String> it = groceryList.iterator();
+while (it.hasNext()) {
+   String str = it.next();
+   if (str.equals("bread"))
+       it.remove();
+   }
+ for (int i = groceryList.size() - 1; i >= 0 ; i--) {
+    String str = groceryList.get(i);
+
+    if (str.equals("bread")) {
+       groceryList.remove(str);
+    }
+ }
+ Iterator<String> it = groceryList.iterator();
+ while (it.hasNext()) {
+    String str = it.next();
+    if (str.equals("bread"))
+        groceryList.remove(str);
+ }
+ for (String str: groceryList) {
+    if (str.equals("bread"))
+       groceryList.remove(str);
+ }
+ for (int i = 0; i < groceryList.size(); i++) {
+    String str = groceryList.get(i);
+
+    if (str.equals("bread")) {
+       groceryList.remove(str);
+    }
+ }
+ set prohibits duplicate entries
+ What must replace the ???'s in order for the ArrayList to support the sort() method?
+ List<???> mystery = new ArrayList<>();
+ Any class that implements the Comparable interface
+ Which of the following is true about Map data structures
+ Correct Answer
+ A value can be associated with more than one key
+ What is a correct way to create an instance of a HashMap?
+ Map<Integer, Integer> map = new HashMap<>();
+ Assuming you have a properly created Student class, write the code needed
+ to add an entry to the Map where the student is associated with the letter grade A.
+ Student student = new Student("John", "Doe");
+ Map<Student, Character> grades = new HashMap<>();
+ // your code here
+ Please note that the letter grade is a Character object, not a String.
+ Answer:	grades.entrySet().forEach(System.out::println);
+ What method returns the number of key-value pairs stored in a Map?
+ .size();
+ Select the code sample that will NOT print all elements in the groceryList.
+
+ Map<String, Integer> groceryList = new HashMap<>();
+ groceryList.put("milk", 1);
+ groceryList.put("bread", 2);
+ groceryList.put("eggs", 1);
+ for(int i = 0; i < groceryList.size(); i++) {
+     System.out.println(groceryList.get(i) + "=" + i);
+ }
+In a use case diagram, the line connecting an actor to a task is called a(n)
+Association
+When Use Case B is a required part of the functionality of Use Case A, we say A _________ B
+Includes
+When Use Case B may or may not be part of Use Case A, we say that B ___________ A.
+Extends
+More than one actor may be associated with a single use case.true
+In a Use Case Narrative, the ____________ is the series of steps that describe
+the behavior in a task when the process works in the preferred manner.
+Basic Flow
+In a Use Case Narrative, a(n) _________ is a series of steps that describe
+ behavior when some aspect of the process deviates from the preferred behavior.
+Alternate Flow
+In a Use Case Narrative, the ___________  initiates a Use Case.
+Primary Actor
+Based on the following narrative snippet, what is the likely intent of the behavior shown?\
+Alternate Flow 1 (from Basic Flow 13):
+
+1) System displays error message.
+
+2) User acknowledges error
+
+3) Return to Basic Flow step 10
+The user is asked to try again
+A(n) ________ is a copy of someone else's GitHub repository under your own account.
+ The repo shares code with the original "upstream" repository.
+Correct Answer
+ fork
+_________ is the remote alias used to refer to the original open source repository.
+Correct Answer
+upstream
+_________ is the remote alias used to refer to the forked repository.
+Correct Answer
+origin
+A(n) __________ is a version of a repository's code that a developer can work on
+without affecting other versions.
+Correct Answer
+branch
+To make a new branch, the git term is called _____.
+checkout
+In our class open source project, the teacher
+is the maintainer and the students are the _______________. (spell correctly)
+
+Answer:	contributor
+Question 7		1 / 1 point
+How do you submit code to be reviewed for an open source project?
+By creating a pull request through the GitHub interface
+To get the latest changes from a remote repository, you can run the git pull command.
+ Which two other commands are equivalent to a git pull?
+git fetch
+git merge
+@Test is called a(n):
+Correct Answer
+Annotation
+Test methods always return:
+
+Correct Answer
+void
+Which is NOT a valid assert method?
+assertException
+Assume the Person class has this setFirstName method:
+public void setFirstName(String firstName) {
+    if (firstName.length() < 1) {
+        throw new IllegalArgumentException("The first name is required");
+    }
+    this.firstName = firstName;
+}
+
+Complete the following assertThrows statement using a lambda expression.
+@Test
+public void setFirstName() {
+    Person person = new Person();
+    assertThrows(IllegalArgumentException.class, ____________);
+}
+
+Answer:	assertThrows(IllegalArgumentException.class, () -> person.firstname)
+How do you officially, legally copyright something?
+Create it. Even if it's a doodle on a napkin.
+Which of these would be most likely to qualify for fair use?
+Correct Answer
+Quoting a short paragraph from an software development textbook
+You find a great photograph you'd like to use on your web application.
+What should you do first?
+Correct Answer
+Find the owner's copyright or licensing information before using it.
+The MIT license grants users of open-source software all of the following, EXCEPT:
+Correct Answer
+Warranty or liability protection for the software
+The ________ specification describes how web servers can interact with Java web
+technologies including servlets, JavaServer Pages (JSP), and more.
+Jakarta Enterprise Edition (EE)
+________ is the protocol that web browsers and web servers use to communicate.
+Hypertext Transfer Protocol (HTTP)
+A ________ responds to a client's request by sending a message back to the ________.
+Correct Answer
+web server, web browser
+Which of the following is NOT an Java web server container?
+Jetbrains IntelliJ
+Match the term with its definition
+The doGet() method of the HttpServlet class accepts both a request and a response object from the web server and is primarily used to retrieve specified data from HTML form submission.
+Servlet : A class that handles requests, processes them and replies back with a response. For example, we can use them to collect input from a user through an HTML form.
+You can use the @webServlet annotation to specify the URL value of a servlet.
+Each servlet is a Java class that extends the HttpsServlet class.
+httpservletRequest :The servlet class creates this object and passes it as an argument to the servlet's service methods (doGet, doPost, etc).
+The following code is an example of a(n) _________.
+<%
+String user = "Sammy";
+scriplet
+The following code is an example of a(n) _________.
+
+<h1>Hello, <%= user %>!</h1>
+expression
+Which of the following is a JSP comment?
+
+<%-- Comment --%>
+A(n) ________ is used at the top of a JSP to provide information such as the contentType,
+language, and any java classes to import.
+page directive
+Whenever you use EL, you begin by coding a ________ followed by an opening brace
+ { and a closing brace }. Then, you code the expression within the braces.
+dollar sign ($)
+Write JSP code that uses EL to access an attribute called "views".
+
+Answer:	${views}
+Assume you have an abstract Animal class that has a "name" attribute.
+ Assume Cat extends Animal. Assume this code exists in the servlet:
+
+Animal cat = new Cat("Zipper");
+req.setAttribute("my_cat", cat);
+
+Write JSP code that uses the EL dot operator to access the cat's name.
+
+Answer:	${my_cat.name}
+The ServletRequest's getParameter method returns the value of a request
+ parameter as a(n) __________, or null if the parameter does not exist.
+String
+The ServletRequest's _________ method stores an attribute in the request object.
+setAttribute
+The ServetRequest's __________ method returns a RequestDispatcher object that acts
+as a wrapper for a JSP located at the given path.
+getRequestDispatcher
+The RequestDispatcher's ___________ method sends a request and response object
+ from a servlet to a JSP file.
+forward
+________ provides tags for common tasks that need to be performed in JSPs, like if
+
+The JSP Standard Tag Library (JSTL)
+Before you can use JSTL tags in a JSP, you must code a ________ that identifies
+ the JSTL library and its prefix.
+A taglib directive
+What JSTL tag is used to perform conditional processing to change the appearance of
+the page depending on the values of the attributes that are available to the page?
+<c:if></c:if>
+Question 4		1 / 1 point
+What JSTL tag is used to loop through items that are stored in most collections,
+ including arrays?
+<c:forEach></c:forEach>
+Database driver software is available as part of the JDK.
+There is no need to include a dependency in the pom.xml file.
+	True
+MySQL Connector/J is a _____ driver used to connect your Java project
+to a  MySQL database server.
+ JDBC
+Which of the following is NOT a benefit of using stored procedures?
+Stored procedures can easily be moved from one DBMS to another.
+Which of the following is used to get a Connection object?
+Correct Answer
+DriverManager
+Which of the following do you use to get a Statement object?
+Correct Answer
+Connection
+
+Which of the following contains the set of records returned from a SQL query?
+Correct Answer
+ResultSet
+Connection, Statement, and ResultSet objects are all AutoCloseable.
+That means they can be written using __________ statements to automatically _______ the object.
+try-with-resources, close
+
+Given the code fragment:
+
+// connection is a valid connection object
+Statement statement = connection.createStatement();
+String query = "SELECT * FROM user";
+
+Which code executes the query?
+Correct Answer
+ResultSet result = statement.executeQuery(query);
+Which instance can be used to execute a stored procedure?
+Correct Answer
+CallableStatement
+
+For-each Loop
+Print each element on a separate line. I'm using var here because I technically don't know the data type.
+
+for (var el : collection) {
+    System.out.println(el);
+}
+
+forEach Method
+Try using the forEach method from the Iterable interface, which the Collection class extends.
+
+collection.forEach(element -> System.out.println(element));
+
+The forEach loop requires a Consumer object.
+Consumer is a functional interface with a single abstract method called accept(), which takes in a value of type T and returns void.
+This means that  I can write a lambda expression to print all values of the Collection
+To simplify this, a method reference provides us with a cleaner way to refer to the existing method by name.
+
+collection.forEach(System.out::println);
+
+We will learn more about functional interfaces, lambda expressions, and method references in a later section.
+
+Stream and Collector
+Use this code to write a joining collector, which prints everything on one line, but doesn't print the brackets.
+
+System.out.println(collection.stream().map(Object::toString).collect(Collectors.joining(", ")));
+
+ask to write multiple loops on the test , create three ou foue different loops
+List<integer> arr= new ArrayList<>();
+for()int i = 0; i < arr.size(); i ++){
+System.out.println()arr.get(i)}; other method
+for(Interger num:arr){System.out.println(num)}; other method
+arr.forEach(num -> System.iut.printlin(num)); other method
+arr.forEsach(System.out.println);
+what is a function interface: is a interface with exactly one abstract method(abstarct mehtod used as a targert)
+what is the innput and the output of a predicate object, cusumer object ?
+consumer(string)
+predicate the return value must be a boolean
+campare return an int and use two arguments
+
+
+code
+Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have that value, and set the key "a" to have the value "". Basically "b" is a bully, taking the value and replacing it with the empty string.
+
+
+mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
+mapBully({"a": "candy"}) → {"a": "", "b": "candy"}
+mapBully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b": "candy", "c": "meh"}
+public Map<String, String> mapBully(Map<String, String> map) {
+  if(map.containsKey("a")){
+    map.put("b", map.get("a"));
+    map.put("a", "");
+  }
+  return map;
+}
+
+Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have that same value. In all cases remove the key "c", leaving the rest of the map unchanged.
+
+
+mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"}
+mapShare({"b": "xyz", "c": "ccc"}) → {"b": "xyz"}
+mapShare({"a": "aaa", "c": "meh", "d": "hi"}) → {"a": "aaa", "b": "aaa", "d": "hi"}
+public Map<String, String> mapShare(Map<String, String> map) {
+  if(map.containsKey("a")){
+    map.put("b", map.get("a"));
+  }
+  map.remove("c");
+  return map;
+}
+Modify and return the given map as follows: for this problem the map may or may not contain the "a" and "b" keys. If both keys are present, append their 2 string values together and store the result under the key "ab".
+
+
+mapAB({"a": "Hi", "b": "There"}) → {"a": "Hi", "ab": "HiThere", "b": "There"}
+mapAB({"a": "Hi"}) → {"a": "Hi"}
+mapAB({"b": "There"}) → {"b": "There"}
+public Map<String, String> mapAB(Map<String, String> map) {
+  if(map.containsKey("a") && map.containsKey("b")){
+      map.put("ab", map.get("a") + map.get("b"));
+  }
+  return map;
+}
+Given a map of food keys and topping values, modify and return the map as follows: if the key "ice cream" is present, set its value to "cherry". In all cases, set the key "bread" to have the value "butter".
+
+
+topping1({"ice cream": "peanuts"}) → {"bread": "butter", "ice cream": "cherry"}
+topping1({}) → {"bread": "butter"}
+topping1({"pancake": "syrup"}) → {"bread": "butter", "pancake": "syrup"
+public Map<String, String> topping1(Map<String, String> map) {
+  map.put("bread", "butter");
+  if(map.containsKey("ice cream")){
+    map.put("ice cream", "cherry");
+
+  }
+
+    return map;
+}
+Given a map of food keys and their topping values, modify and return the map as follows: if the key "ice cream" has a value, set that as the value for the key "yogurt" also. If the key "spinach" has a value, change that value to "nuts".
+
+
+topping2({"ice cream": "cherry"}) → {"yogurt": "cherry", "ice cream": "cherry"}
+topping2({"spinach": "dirt", "ice cream": "cherry"}) → {"yogurt": "cherry", "spinach": "nuts", "ice cream": "cherry"}
+topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
+public Map<String, String> topping2(Map<String, String> map) {
+  if(map.containsKey("ice cream") && !map.get("ice cream").isEmpty()){
+    map.put("yogurt", map.get("ice cream"));
+  }
+  if(map.containsKey("spinach") && !map.get("spinach").isEmpty()){
+    map.put("spinach", "nuts");
+  }
+  return map;
+}
+Modify and return the given map as follows: if the keys "a" and "b" have values that have different lengths, then set "c" to have the longer value. If the values exist and have the same length, change them both to the empty string in the map.
+
+
+mapAB4({"a": "aaa", "b": "bb", "c": "cake"}) → {"a": "aaa", "b": "bb", "c": "aaa"}
+mapAB4({"a": "aa", "b": "bbb", "c": "cake"}) → {"a": "aa", "b": "bbb", "c": "bbb"}
+mapAB4({"a": "aa", "b": "bbb"}) → {"a": "aa", "b": "bbb", "c": "bbb"}
+public Map<String, String> mapAB4(Map<String, String> map) {
+  if(map.get("a")!=null && map.get("b")!=null){
+  if(map.get("a").length() != map.get("b").length()){
+      map.put("c", map.get("a").length()>map.get("b").length()?map.get("a"):map.get("b"));
+  }
+
+  if(map.get("a").length() == map.get("b").length()){
+      map.put("a","");
+      map.put("b","");
+  }
+  }
+  return map;
+}
+The classic word-count algorithm: given an array of strings, return a Map<String, Integer> with a key for each different string, with the value the number of times that string appears in the array.
+
+
+wordCount(["a", "b", "a", "c", "b"]) → {"a": 2, "b": 2, "c": 1}
+wordCount(["c", "b", "a"]) → {"a": 1, "b": 1, "c": 1}
+wordCount(["c", "c", "c", "c"]) → {"c": 4}
+public Map<String, Integer> wordCount(String[] strings) {
+  Map<String, Integer> count = new HashMap<>();
+  for(String str : strings){
+    if(!count.containsKey(str)){
+      count.put(str,1);
+    } else{
+      count.put(str, count.get(str) + 1);
+    }
+  }
+  return count;
+}
+Given an array of non-empty strings, return a Map<String, String> with a key for every different first character seen, with the value of all the strings starting with that character appended together in the order they appear in the array.
+
+
+firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}
+firstChar(["aa", "bb", "cc", "aAA", "cCC", "d"]) → {"a": "aaaAA", "b": "bb", "c": "cccCC", "d": "d"}
+firstChar([]) → {}
+public Map<String, String> firstChar(String[] strings) {
+  Map<String, String> map = new HashMap<>();
+  for(String str: strings) {
+    if(str.equals("")) {
+      continue;
+    } else if(map.containsKey(str.valueOf(str.charAt(0)))) {
+      map.put(str.valueOf(str.charAt(0)), map.get(str.valueOf(str.charAt(0))) + str);
+    } else {
+      map.put(str.valueOf(str.charAt(0)), str);
+    }
+  }
+  return map;
+}
+christivie database
+passwords
+YQF851D5IT0Z6665$
+username
+aejtijgaze
+az webapp deploy --resource-group java-web --name christivie --src-path ./target/java-1.0-SNAPSHOT.war --type war

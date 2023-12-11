@@ -1,0 +1,399 @@
+Certainly! Here are the answers corresponding to the questions in the sample exam:
+
+**Java and Maven Setup (Day 1):**
+
+1. Environment variables in the Windows environment are used to store system-wide configuration settings. They are accessed by applications and processes to retrieve information like the location of executable files, configuration files, etc.
+
+2. The steps to set up Java, Maven, and Tomcat involve downloading and installing the respective software packages, configuring environment variables, and verifying the installations.
+
+**IntelliJ and Java Basics (Day 2):**
+
+3. Three useful IntelliJ shortcuts:
+   - Ctrl + Shift + A (Find Action)
+   - Ctrl + Space (Code Completion)
+   - Alt + Enter (Quick Fix)
+
+4. Basic Java class:
+
+   ```java
+   public class MyClass {
+       private String myVariable;
+
+       public MyClass(String myVariable) {
+           this.myVariable = myVariable;
+       }
+
+       public String getMyVariable() {
+           return myVariable;
+       }
+
+       public void setMyVariable(String myVariable) {
+           this.myVariable = myVariable;
+       }
+   }
+   ```
+
+**Git and GitHub (Day 3):**
+
+5. The .gitignore file specifies intentionally untracked files that Git should ignore.
+
+6. Forking creates a personal copy of someone else's project, and cloning is the process of downloading a repository to your local machine.
+
+**Java Fundamentals (Day 4):**
+
+7. In Java, == compares object references, checking if they refer to the same object. equals method compares the content of objects.
+
+8. Example of using arrays in Java:
+
+   ```java
+   int[] numbers = {1, 2, 3, 4, 5};
+   ```
+
+**UML Class Diagram (Day 5):**
+
+9. A sample UML class diagram:
+
+   ```
+   +-----------------+          +-----------------+
+   |     ClassA      |          |     ClassB      |
+   +-----------------+          +-----------------+
+   | - variableA     |          | - variableB     |
+   | + methodA()     |          | + methodB()     |
+   +-----------------+          +-----------------+
+               |                          |
+               +--------------------------+
+                         Association
+   ```
+
+**Collections in Java (Day 6-7):**
+
+10. Differences between List and Set:
+    - List: Ordered, allows duplicate elements.
+    - Set: Unordered, does not allow duplicate elements.
+
+11. Example of Lambda expression:
+
+    ```java
+    List<String> names = Arrays.asList("John", "Jane", "Doe");
+    names.forEach(name -> System.out.println(name));
+    ```
+
+**Maps and Pair Programming (Day 8):**
+
+12. Example of HashMap in Java:
+
+    ```java
+    Map<String, Integer> ageMap = new HashMap<>();
+    ageMap.put("John", 25);
+    ageMap.put("Jane", 30);
+    ```
+
+13. Pair Programming Activity 1: The description of the experience may vary based on the specific activity undertaken.
+
+**UML Use Case Diagram (Day 9):**
+
+14. A UML Use Case Diagram represents interactions between users and a system, illustrating different use cases and actors involved.
+
+**Coding Practice (Day 10):**
+
+15. CodingBat is a platform for practicing coding problems. An example problem and solution would be specific to the exercises completed on that day.
+
+**LinkedList and CodeGym (Day 11-12):**
+
+16. Advantages of LinkedList:
+    - Dynamic size
+    - Efficient insertions and deletions
+    - No need to specify initial size
+
+17. CodeGym is an online platform with interactive Java coding tasks and lessons.
+
+**UML Use Case Narrative (Day 13):**
+
+18. Use Case Narrative: Write a detailed narrative describing the steps, interactions, and outcomes for a specific use case, such as user registration.
+
+**Open Source and Git Collaboration (Day 14-15):**
+
+19. Forking creates a copy under your GitHub account, while cloning downloads the repository to your local machine. Branching allows for parallel development, and pull requests propose changes from one branch to another.
+
+**Unit Testing in Java (Days 16-17):**
+
+20. Unit testing involves verifying that individual units of code work as expected. Example:
+
+    ```java
+    assertEquals(4, Math.add(2, 2));
+    ```
+
+**Jakarta EE and Servlets (Day 18):**
+
+21. pom.xml is a project object model file used by Maven. HttpServlet is a class that simplifies the implementation of servlets in Java.
+
+22. HttpServlet example:
+
+    ```java
+    public class MyServlet extends HttpServlet {
+        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            // Handle POST request
+        }
+
+        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            // Handle GET request
+        }
+    }
+    ```
+
+**JSP and JSTL (Day 19-20):**
+
+23. JSTL (JavaServer Pages Standard Tag Library) simplifies JSP development. Example:
+
+    ```jsp
+    <c:if test="${condition}">
+        Content to show if the condition is true.
+    </c:if>
+    ```
+
+**Servlet and JSP with Get Requests (Days 21-23):**
+
+24. Implementation of servlet and JSP handling GET requests and processing URL query string parameters.
+
+25. compareTo method example:
+
+    ```java
+    public class MyClass implements Comparable<MyClass> {
+        private int value;
+
+        @Override
+        public int compareTo(MyClass other) {
+            return Integer.compare(this.value, other.value);
+        }
+    }
+    ```
+
+**Deployment to Azure (Day 24):**
+
+26. Steps to deploy a .war file to Azure involve configuring a web app, deploying using Azure CLI, or Azure DevOps.
+
+**Database Connectivity (Day 25):**
+
+27. .env files store environment variables, including database connection details. JDBC Drivers enable Java applications to interact with databases.
+
+28. DriverManager in JDBC is responsible for managing a
+
+ list of database drivers. It is used to establish a connection to the database.
+
+**Database Operations with JDBC (Day 26):**
+
+29. JDBC code snippet:
+
+    ```java
+    Connection connection = DriverManager.getConnection(url, user, password);
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECT * FROM my_table");
+    ```
+
+30. try-with-resources ensures that each resource is closed at the end of the statement block.
+
+31. CallableStatement is used to call stored procedures in a database.
+
+**User Registration and Login (Days 27-28):**
+
+32. User registration and login system involve creating database tables, handling user input, encrypting passwords, and validating credentials.
+
+33. Hashing passwords is crucial for security to prevent storing plain text passwords in the database.
+
+These answers are illustrative and may vary based on specific implementation details and context.
+
+Certainly! Here's a sample exam with answers based on the topics you've covered:
+
+---
+
+### Exam: Java Fundamentals
+
+**Instructions:** Answer all the questions. Provide concise and clear explanations where required.
+
+---
+
+#### Section 1: Maven and Basic Java (Day 1-2)
+
+1. **(5 points)** Explain the steps to install Apache Maven on your system.
+
+   *Answer:*
+   ```
+   Download Apache Maven from the official website.
+    Extract the archive, add the bin directory to the system PATH.
+   ```
+
+2. **(5 points)** Create a Java class named `Person` with instance variables (name and age), a constructor, and a `toString()` method.
+
+   *Answer:*
+   ```java
+   public class Person {
+       private String name;
+       private int age;
+
+       public Person(String name, int age) {
+           this.name = name;
+           this.age = age;
+       }
+
+       @Override
+       public String toString() {
+           return "Person{name='" + name + "', age=" + age + '}';
+       }
+   }
+   ```
+
+3. **(5 points)** Write a try-catch statement and explain its purpose.
+
+   *Answer:*
+   ```
+   try {
+       // code that may throw an exception
+   } catch (ExceptionType e) {
+       // handle the exception
+   }
+   ```
+   The try-catch statement is used to catch and handle exceptions that may occur within the try block.
+
+4. **(5 points)** Implement a unit test using lambda expressions to calculate the average of a list of integers. Assume `arr` is an `ArrayList` of integers.
+
+   *Answer:*
+   ```java
+   List<Integer> arr = new ArrayList<>();
+   arr.add(10);
+   arr.add(20);
+   arr.add(30);
+
+   double average = arr.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
+   System.out.println("Average: " + average);
+   ```
+
+#### Section 2: Git and Version Control (Day 3)
+
+5. **(5 points)** Explain the purpose of the command `git init -b main`.
+
+   *Answer:*
+   ```
+   Initializes a new Git repository with the default branch named 'main'.
+   ```
+
+6. **(5 points)** How does the .gitignore file help in version control?
+
+   *Answer:*
+   ```
+   .gitignore specifies files and directories that should be ignored and not tracked by Git.
+   ```
+
+#### Section 3: CodeGym and Java Basics (Day 4)
+
+7. **(5 points)** Define the difference between a static method and a non-static method in Java.
+
+   *Answer:*
+   ```
+   A static method belongs to a class, and you can call it using the class name.
+   A non-static method belongs to an instance of the class and requires an object to call it.
+   ```
+
+8. **(5 points)** How do you instantiate an array in Java?
+
+   *Answer:*
+   ```
+   int[] numbers = new int[5];
+   ```
+
+#### Section 4: UML Diagrams (Day 5)
+
+9. **(5 points)** Explain the associations represented by arrows in UML diagrams.
+
+   *Answer:*
+   ```
+   Arrows in UML diagrams represent relationships between classes. They indicate the direction and nature of the association.
+   ```
+
+10. **(5 points)** Draw a UML class diagram with two classes, `Student` and `Course`, and represent a one-to-many association.
+
+   *Answer:*
+   ```
+   Student 1 --- * Course
+   ```
+
+#### Section 5: Interfaces and Loops (Day 6)
+
+11. **(5 points)** Why can't you instantiate methods in an interface?
+
+   *Answer:*
+   ```
+   Interface methods are abstract and do not have a body. They are meant to be implemented by classes that implement the interface.
+   ```
+
+12. **(5 points)** Provide code snippets for three different types of loops using a List of integers.
+
+   *Answer:*
+   ```java
+   // Loop 1: for loop
+   for (int i = 0; i < list.size(); i++) {
+       System.out.println(list.get(i));
+   }
+
+   // Loop 2: enhanced for loop
+   for (Integer num : list) {
+       System.out.println(num);
+   }
+
+   // Loop 3: lambda expression
+   list.forEach(num -> System.out.println(num));
+   ```
+
+#### Section 6: HashSet and Maps (Day 7-8)
+
+13. **(5 points)** Explain the difference between HashSet and Set in Java.
+
+   *Answer:*
+   ```
+   HashSet is a specific implementation of the Set interface that does not allow duplicate values.
+   Set is the interface, and HashSet is one of the classes implementing it.
+   ```
+
+14. **(5 points)** How can you retrieve an object from a HashMap using its key?
+
+   *Answer:*
+   ```
+   Use the get(key) method, where 'key' is the key associated with the object.
+   ```
+
+#### Section 7: Web Development Basics (Day 20-23)
+
+15. **(5 points)** How are query string parameters formatted in a URL?
+
+   *Answer:*
+   ```
+   Query string parameters are added to the end of a URL after a question mark and separated by ampersands. Example: ?param1=value1&param2=value2
+   ```
+
+16. **(5 points)** Demonstrate how to generate the toString() method for a class.
+
+   *Answer:*
+   ```
+   In IntelliJ IDEA, right-click in the class file > Generate > toString() > select fields > OK.
+   ```
+
+#### Section 8: Database and JDBC (Day 24-26)
+
+17. **(5 points)** What is the purpose of a stored procedure in a database?
+
+   *Answer:*
+   ```
+   A stored procedure is a precompiled collection of one or more SQL statements that can be executed by calling the procedure's name.
+   ```
+
+18. **(5 points)** Explain how to use CallableStatement in JDBC.
+
+   *Answer:*
+   ```
+   CallableStatement is used to call stored procedures in a database. It can be obtained from Connection.prepareCall() and then executed using executeQuery() or executeUpdate().
+   ```
+
+---
+
+**End of Exam**
+
+Feel free to customize the questions and answers based on your specific coursework and emphasis. If you have any further requests or adjustments, let me know!

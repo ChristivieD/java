@@ -102,5 +102,29 @@ public class UserDAO extends Database {
         }
         return user;
     }
+    public static void update(User user){
+        try(Connection connection = getConnection()) {
+            if(connection != null) {
+                try(CallableStatement statement = connection.prepareCall("{CALL sp_update_user(?,?,?,?,?,?,?,?,?)}")) {
+                    statement.setInt(1, user.getId());
+                    statement.setString(2, user.getFirstName());
+                    statement.setString(3, user.getLastName());
+                    statement.setString(4, user.getEmail());
+                    statement.setString(5, user.getPhone());
+                    String hashedpassword = PasswordUtility.hashpw(new String(user.getPassword()));
+                    statement.setString(6,hashedpassword);
+                    statement.setString(7, user.getLanguage());
+                    statement.setString(8, user.getStatus());
+                    statement.setString(9, user.getPrivileges());
+                    statement.executeUpdate();
+                }catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
 

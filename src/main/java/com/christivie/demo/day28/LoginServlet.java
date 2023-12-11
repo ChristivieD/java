@@ -16,6 +16,7 @@ import java.util.Map;
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
     private static Map<String,String> results = new HashMap<>();
+    private static int loginAttempt = 5;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/day28/login.jsp").forward(request,response);
@@ -38,15 +39,23 @@ public class LoginServlet extends HttpServlet {
 
         try {
             User userFromDatabase = UserDAO.get(email);
-            if(userFromDatabase == null){
-                // email not found
+            if(userFromDatabase == null || userFromDatabase.getStatus().equals("locked")){
+                // email not found or account is locked
                 results.put("loginFail", "no user found with that email and passwords combination");
             }
             else{
                 // email is found
                 if(!PasswordUtility.checkpw(password,String.valueOf(userFromDatabase.getPassword()))){
                     // passwords don't match
-                    results.put("loginFail", "no user found with that email and passwords combination");
+                    if(loginAttempt == 0){
+                        userFromDatabase.setStatus("locked");
+                        UserDAO.update(userFromDatabase);
+                        results.put("loginFail", "your account is locked. Please contact the admin for login");
+                    }
+                    else{
+                        loginAttempt = loginAttempt -1 ;
+                        results.put("loginFail"," login failed, now only" +"\t" + loginAttempt + " login available");
+                    }
                 }
                 else{
                     // password match
@@ -58,7 +67,6 @@ public class LoginServlet extends HttpServlet {
         }
         request.setAttribute("results",results);
         request.getRequestDispatcher("WEB-INF/day28/login.jsp").forward(request,response);
-
 
     }
 }
