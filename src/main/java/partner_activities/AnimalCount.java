@@ -67,5 +67,18 @@ public class AnimalCount {
 
             }
         }
+        Map<Integer, Integer> peopleCountByPets = new HashMap<>();
+        for (List<Animal> list : owners_and_their_pets.values()) {
+            int numberOfPets = list.size();
+            peopleCountByPets.put(numberOfPets, peopleCountByPets.getOrDefault(numberOfPets, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : peopleCountByPets.entrySet()) {
+            if (entry.getKey() == 0) {
+                System.out.println(entry.getValue() + " person has no pets.");
+            } else {
+                System.out.println(entry.getValue() + " person has " + entry.getKey() + " pets.");
+            }
+        }
     }
 }
